@@ -11,7 +11,7 @@ public class MyBatisGeneratorDemo {
     public static void main(String[] args) throws Exception {
         List<String> warnings = new ArrayList<String>();
         boolean overwrite = true;
-        File configFile = new File("model/src/test/java/generatorConfig.xml");
+        File configFile = new File("D:\\workspace\\redis-goods\\model\\src\\test\\java\\generatorConfig.xml");
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(configFile);
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);

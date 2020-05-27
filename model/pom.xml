@@ -34,6 +34,11 @@
                 <version>1.18.12</version>
                 <scope>compile</scope>
             </dependency>
+            <dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>1.4.0</version>
+            </dependency>
             <!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-maven-plugin -->
             <dependency>
                 <groupId>org.mybatis.generator</groupId>
