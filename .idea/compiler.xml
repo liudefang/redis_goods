@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="model" />
+        <module name="server" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="model" target="1.5" />
+    <bytecodeTargetLevel target="8">
+      <module name="model" target="1.8" />
       <module name="redis-goods" target="1.5" />
+      <module name="server" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
