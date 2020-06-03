@@ -2,9 +2,11 @@ package com.goods.model.mapper;
 
 import com.goods.model.entity.GoodsItem;
 import com.goods.model.entity.GoodsItemExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
+// 定义动态sql执行所在的Mapper
 public interface GoodsItemMapper {
     long countByExample(GoodsItemExample example);
 
@@ -27,4 +29,7 @@ public interface GoodsItemMapper {
     int updateByPrimaryKeySelective(GoodsItem record);
 
     int updateByPrimaryKey(GoodsItem record);
+
+    // 根据商品编码，查询商品详情
+    GoodsItem selectByCode(@Param("code") String code);
 }
