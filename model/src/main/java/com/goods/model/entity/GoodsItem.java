@@ -1,5 +1,7 @@
 package com.goods.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class GoodsItem {
@@ -8,6 +10,7 @@ public class GoodsItem {
     private String code;
 
     private String name;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
 
     private Date createTime;
 

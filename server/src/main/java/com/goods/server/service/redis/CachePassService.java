@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.stereotype.Service;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,6 +19,8 @@ import java.util.concurrent.TimeUnit;
  * Author  : mike.liu
  * File    : CachePassService.java
  */
+//缓存穿透service
+@Service
 public class CachePassService {
     private static final Logger log = LoggerFactory.getLogger(CachePassService.class);
 
@@ -50,7 +53,7 @@ public class CachePassService {
             //从缓存中查询该商品详情
             Object res = valueOperations.get(key);
             if(res!=null && !Strings.isNullOrEmpty(res.toString())){
-                //如果可以找到该商品，则进程json反序列化解析
+                //如果可以找到该商品，则进行json反序列化解析
                 good = objectMapper.readValue(res.toString(),GoodsItem.class);
             }
         }else {
@@ -59,7 +62,7 @@ public class CachePassService {
             //从数据库中获取该商品详情
             good=goodsItemMapper.selectByCode(itemCode);
             if(good!=null){
-                //如果数据库中查找得到该商品，则将其序列化后写入缓冲中
+                //如果数据库中查找得到该商品，则将其序列化后写入缓存中
                 valueOperations.set(key,objectMapper.writeValueAsString(good));
             }else {
                 //过期失效时间TTL设置为30分钟，实际情况根据实际业务决定

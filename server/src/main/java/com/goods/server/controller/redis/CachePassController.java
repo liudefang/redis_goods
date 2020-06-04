@@ -29,6 +29,8 @@ public class CachePassController {
     private CachePassService cachePassService;
     /**
      * 获取热销商品信息
+     * @param itemCode
+     * @return
      */
     @RequestMapping(value = prefix+"/goods/info",method = RequestMethod.GET)
     public Map<String,Object> getGoods(@RequestParam String itemCode){
