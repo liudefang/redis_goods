@@ -33,7 +33,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.8.0-alpha2</version>
+            <version>1.7.29</version>
             <scope>compile</scope>
         </dependency>
         <!--springboot全家桶 https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
@@ -74,28 +74,49 @@
             <version>25.1-android</version>
             <scope>compile</scope>
         </dependency>
+
     </dependencies>
 
     <build>
-        <finalName>middleware_practice_${project.parent.version}</finalName>
+        <finalName>redis_good_${project.parent.version}</finalName>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.2.6.RELEASE</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
                 <executions>
                     <execution>
-                        <goals><goal>repackage</goal></goals>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>without-configs</classifier>
+                            <excludes>
+                                <exclude>*.yml</exclude>
+                                <exclude>logback.xml</exclude>
+                            </excludes>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.2.3</version>
-                <configuration><failOnMissingWebXml>false</failOnMissingWebXml></configuration>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
+
         </plugins>
+
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -104,5 +125,9 @@
         </resources>
     </build>
 
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
 </project>
