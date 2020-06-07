@@ -58,17 +58,18 @@ public class CachePassService {
             }
         }else {
             //在缓存中没有找到该商品
-            log.info("---获取商品详情-缓存中不存在该商品-从数据库中查找---商品编号为：{} \",itemCode");
+            log.info("---获取商品详情-缓存中不存在该商品-从数据库中查找---商品编号为：{} ",itemCode);
             //从数据库中获取该商品详情
             good=goodsItemMapper.selectByCode(itemCode);
             if(good!=null){
                 //如果数据库中查找得到该商品，则将其序列化后写入缓存中
                 valueOperations.set(key,objectMapper.writeValueAsString(good));
-            }else {
+            }
+            /*else {
                 //过期失效时间TTL设置为30分钟，实际情况根据实际业务决定
                 valueOperations.set(key,"",30L, TimeUnit.MINUTES);
 
-            }
+            }*/
         }
         return good;
 

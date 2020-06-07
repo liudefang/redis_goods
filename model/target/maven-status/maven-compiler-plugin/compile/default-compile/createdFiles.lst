@@ -1,6 +1,6 @@
-com/goods/model/mapper/GoodsItemMapper.class
-com/goods/model/entity/GoodsItemExample$Criterion.class
-com/goods/model/entity/GoodsItemExample$GeneratedCriteria.class
-com/goods/model/entity/GoodsItem.class
-com/goods/model/entity/GoodsItemExample$Criteria.class
-com/goods/model/entity/GoodsItemExample.class
+com\goods\model\entity\GoodsItem.class
+com\goods\model\entity\GoodsItemExample$Criteria.class
+com\goods\model\entity\GoodsItemExample$Criterion.class
+com\goods\model\entity\GoodsItemExample$GeneratedCriteria.class
+com\goods\model\entity\GoodsItemExample.class
+com\goods\model\mapper\GoodsItemMapper.class

@@ -23,7 +23,7 @@ import java.util.Map;
 @RestController
 public class CachePassController {
     private static final Logger log = LoggerFactory.getLogger(CachePassController.class);
-    private static final String prefix="cache/pass";
+    private static final String prefix="cache";
     //定义缓存穿透处理服务类
     @Autowired
     private CachePassService cachePassService;
