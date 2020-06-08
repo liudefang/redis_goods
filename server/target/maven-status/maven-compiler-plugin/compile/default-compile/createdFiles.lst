@@ -1,6 +1,7 @@
-com\goods\server\controller\GoodsController.class
-com\goods\server\config\CommonConfig.class
-com\goods\server\service\redis\CachePassService.class
-com\goods\server\controller\redis\CachePassController.class
-com\goods\server\entity\Goods.class
-com\goods\server\MainApplication.class
+com/goods/server/service/redis/CachePassService.class
+com/goods/server/controller/redis/CachePassController.class
+com/goods/server/controller/GoodsController.class
+com/goods/server/MainApplication.class
+com/goods/server/config/CommonConfig.class
+com/goods/server/entity/Goods.class
+com/goods/server/service/GoodsService.class

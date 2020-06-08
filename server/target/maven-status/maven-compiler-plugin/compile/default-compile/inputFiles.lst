@@ -1,6 +1,7 @@
-D:\workspace\redis_goods\server\src\main\java\com\goods\server\controller\GoodsController.java
-D:\workspace\redis_goods\server\src\main\java\com\goods\server\controller\redis\CachePassController.java
-D:\workspace\redis_goods\server\src\main\java\com\goods\server\config\CommonConfig.java
-D:\workspace\redis_goods\server\src\main\java\com\goods\server\service\redis\CachePassService.java
-D:\workspace\redis_goods\server\src\main\java\com\goods\server\entity\Goods.java
-D:\workspace\redis_goods\server\src\main\java\com\goods\server\MainApplication.java
+/Users/young/Desktop/workplace/workspace/redis_goods/server/src/main/java/com/goods/server/MainApplication.java
+/Users/young/Desktop/workplace/workspace/redis_goods/server/src/main/java/com/goods/server/config/CommonConfig.java
+/Users/young/Desktop/workplace/workspace/redis_goods/server/src/main/java/com/goods/server/service/redis/CachePassService.java
+/Users/young/Desktop/workplace/workspace/redis_goods/server/src/main/java/com/goods/server/controller/redis/CachePassController.java
+/Users/young/Desktop/workplace/workspace/redis_goods/server/src/main/java/com/goods/server/controller/GoodsController.java
+/Users/young/Desktop/workplace/workspace/redis_goods/server/src/main/java/com/goods/server/entity/Goods.java
+/Users/young/Desktop/workplace/workspace/redis_goods/server/src/main/java/com/goods/server/service/GoodsService.java

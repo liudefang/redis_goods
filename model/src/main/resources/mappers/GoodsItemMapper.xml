@@ -208,6 +208,21 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
+  <!--加入使用缓存-->
+  <cache type="org.mybatis.caches.ehcache.EhcacheCache">
+    <!--缓存自创建日期起至失效时的间隔时间一个小时-->
+    <property name="timeToIdleSeconds" value="3600"/>
+    <!--缓存创建以后，最后一次访问缓存的日期至失效之时的时间间隔一个小时-->
+    <property name="timeToLiveSeconds" value="3600"/>
+    <!--设置在缓存中保存的对象的最大的个数，这个按照业务进行配置-->
+    <property name="maxEntriesLocalHeap" value="1000"/>
+
+    <!--设置在磁盘中最大实体对象的个数-->
+    <property name="maxEntriesLocalDisk" value="10000000"/>
+    <!--缓存淘汰算法-->
+    <property name="memoryStoreEvictionPolicy" value="LRU"/>
+  </cache>
+
 
   <!--根据商品编码查询-->
   <select id="selectByCode" resultType="com.goods.model.entity.GoodsItem" >
