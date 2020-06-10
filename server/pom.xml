@@ -131,8 +131,8 @@
                         <configuration>
                             <classifier>without-configs</classifier>
                             <excludes>
-                                <exclude>*.yml</exclude>
-                                <exclude>logback.xml</exclude>
+                                <exclude>*.properties</exclude>
+                                <exclude>mybatis-config.xml</exclude>
                             </excludes>
                         </configuration>
                     </execution>

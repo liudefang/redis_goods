@@ -65,11 +65,11 @@ public class CachePassService {
                 //如果数据库中查找得到该商品，则将其序列化后写入缓存中
                 valueOperations.set(key,objectMapper.writeValueAsString(good));
             }
-            /*else {
+            else {
                 //过期失效时间TTL设置为30分钟，实际情况根据实际业务决定
                 valueOperations.set(key,"",30L, TimeUnit.MINUTES);
 
-            }*/
+            }
         }
         return good;
 
